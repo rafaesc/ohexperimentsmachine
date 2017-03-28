@@ -1,5 +1,7 @@
 # Experiments Machine
 
+It is a beta version, will be updated documentation, webpack scripts and file organization to facilitate packaging, thanks for the patience
+
 > A Vue.js project
 
 ## Build Setup
