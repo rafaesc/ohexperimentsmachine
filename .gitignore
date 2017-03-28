@@ -1,9 +1,4 @@
 .DS_Store
 node_modules/
-dist/
 .idea/
 npm-debug.log
-/assets/css/build.min.css
-assets/css/build.min.css
-assets/css/maps/
-/assets/audio/
