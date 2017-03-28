@@ -1,0 +1,71 @@
+.Tutorial {
+  position: absolute;
+  background: rgba(255, 255, 255, 0.63);
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  opacity: 0;
+  -webkit-transition: opacity 0.5s;
+  -moz-transition: opacity 0.5s;
+  -ms-transition: opacity 0.5s;
+  -o-transition: opacity 0.5s;
+  transition: opacity 0.5s;
+
+  h1, h2, h3 {
+    font-family: 'Open Sans Condensed',sans-serif;
+    color: black;
+    font-weight: 300;
+  }
+
+  &__contain {
+    width: 800px;
+    margin: 0 auto;
+    max-width: 80%;
+    position: relative;
+
+    .title-main {
+      line-height: 33px;
+      margin-bottom: 20px;
+      padding-top: 21px;
+      margin-top: 0px;
+      font-size: 29px;
+    }
+
+    &--subtitles {
+      position: relative;
+      height: 40px;
+
+      .transition-tutorial-enter-active, .transition-tutorial-leave-active {
+        transition: all 1s;
+      }
+      .transition-tutorial-enter, .transition-tutorial-leave-active {
+          opacity: 0;
+      }
+      .transition-tutorial-enter {
+          transform: translateY(31px);
+      }
+      .transition-tutorial-leave-active {
+          transform: translateY(-31px);
+      }
+
+      h2 {
+        font-size: 18px;
+        margin: 0px;
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        text-align: center;
+      }
+    }
+
+  }
+}
+
+
+.System.active-tutorial {
+  .Tutorial {
+    opacity: 1;
+  }
+}

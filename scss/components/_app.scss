@@ -1,0 +1,141 @@
+$minHeightApp : 630px;
+$transitionProp : opacity;
+$transitionTime : 1s;
+
+.container {
+  min-height: $minHeightApp;
+  position: absolute;
+  overflow: hidden;
+  display: table;
+  height: 100%;
+  width: 100%;
+  left: 0;
+  top: 0;
+}
+
+.Parallax {
+  min-height: $minHeightApp;
+  position: absolute;
+  overflow: hidden;
+  display: block;
+  height: 100%;
+  width: 100%;
+  padding: 0;
+  margin: 0;
+
+  @media screen and (max-width:767px){
+    position: relative;
+    min-height: 692px;
+  }
+
+  &__layer {
+    display: block;
+    height: 100%;
+    width: 100%;
+    padding: 0;
+    margin: 0;
+    position: absolute !important;
+
+    &--background {
+      -webkit-backface-visibility: hidden;
+      -moz-backface-visibility: hidden;
+      backface-visibility: hidden;
+      position: absolute;
+    }
+
+    .layer {
+      &-sky1, &-sky2, &-montain1, &-montain2, &-front1, &-front2 {
+        opacity: 0;
+        background-repeat: no-repeat;
+        transition: opacity linear 8s;
+        background-position: 50% 100%;
+      }
+      &-sky1, &-sky2, &-montain1, &-montain2{
+        background-size: cover;
+      }
+      &-sky1, &-sky2 {
+        bottom: 15%;
+        width: 121.5%;
+        left: -11%;
+        top: -5%;
+      }
+      &-montain1, &-montain2, &-front1, &-front2 {
+        bottom: 0;
+        width: 114.5%;
+        left: -7%;
+        top: 51%;
+      }
+      &-front1, &-front2 {
+        top: 50%;
+      }
+
+      &-sky1 {
+        background-image: url(./assets/img/sky1.jpg);
+      }
+
+      &-sky2 {
+        background-image: url(./assets/img/sky2.jpg);
+      }
+
+      &-montain1{
+        background-image: url(./assets/img/montain1.png);
+      }
+
+      &-montain2{
+        background-image: url(./assets/img/montain2.png);
+      }
+
+      &-front1{
+        background-image: url(./assets/img/front1.png);
+      }
+
+      &-front2{
+        background-image: url(./assets/img/front2.png);
+      }
+
+      &-game, &-spectrum {
+        bottom: 0;
+        width: 121.5%;
+        left: -10%;
+        top: 0;
+      }
+    }
+  }
+}
+
+#app {
+  .Parallax__layer{
+    .layer {
+      &-sky1, &-montain1, &-front1 {
+        opacity: 1;
+      }
+    }
+  }
+}
+
+#parallax.night {
+  .Parallax__layer{
+    .layer {
+      &-sky2, &-montain2, &-front2 {
+        opacity: 1;
+      }
+    }
+  }
+}
+
+canvas#canvas_spectrum {
+  top: 30%;
+  position: absolute;
+  margin-top: -300px;
+  left: 50%;
+  margin-left: -760px;
+}
+@media screen and (max-width:767px){
+  canvas#canvas_spectrum {
+    margin-left: -753px;
+  }
+}
+
+#panel {
+  position: relative;
+}
