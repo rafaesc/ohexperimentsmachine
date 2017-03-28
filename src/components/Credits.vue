@@ -29,6 +29,13 @@
                 <a @click="redirect('linkedin')" href="https://www.linkedin.com/in/rafaelescala/" target="_blank">https://www.linkedin.com/in/rafaelescala/</a>
               </div>
             </div>
+
+            <div class="Credits__row">
+              <div class="Credits__text">
+                Source Code <a @click="redirect('github')" href="https://github.com/rafaesc92/ohexperimentsmachine" target="_blank">https://github.com/rafaesc92/ohexperimentsmachine</a>
+              </div>
+            </div>
+            </div>
           </div>
         </div>
       </div>
