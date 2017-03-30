@@ -58,7 +58,7 @@ $color_combo: rgba(196, 208, 33, 0.37);
       }
     }
     &__tap {
-      background-image: url(./assets/img/panel.png);
+      background-image: url(../static/img/panel.png);
       position: absolute;
       top: 0;
       bottom: 0;
@@ -77,7 +77,7 @@ $color_combo: rgba(196, 208, 33, 0.37);
       }
     }
     &__wrapper.panel-layout {
-      background-image: url(./assets/img/panel.png);
+      background-image: url(../static/img/panel.png);
     }
 
     &__contain {

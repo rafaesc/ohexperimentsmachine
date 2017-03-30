@@ -14,7 +14,6 @@ module.exports = {
           window.location.hash = idx
       }
     }
-    parametros.test || ();
   },
   params: function () {
     var location = window.location.search + ""
@@ -24,11 +23,13 @@ module.exports = {
       var d = location[idxs].split("=");
       contain[d[0]] = d[1]
     }
-    return contain.t && contain.t.indexOf("%2C") > -1 && (contain.t = decodeURIComponent(contain.t)),
-      contain
+		if ( contain.t && contain.t.indexOf("%2C") > -1 ) {
+			contain.t = decodeURIComponent(contain.t)
+		}
+    return contain;
   },
   get: function () {
     let parametros = this.params();
-    return parametros[QUERY] ? parametros[QUERY] || false;
+    return parametros[QUERY] ? parametros[QUERY] : false;
   }
 };

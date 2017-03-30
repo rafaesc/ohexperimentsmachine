@@ -28,7 +28,7 @@
 
     bindPanel = function () {
         canvas.addEventListener('click', function(e) {
-
+            
             if ( activeButtonAutoplay ) {
                 activeButtonAutoplay = false;
                 TweenLite.to(parent.$refs.tap, 0.5, {opacity:0});

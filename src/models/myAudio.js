@@ -1,10 +1,10 @@
 import { audioContextSupported, isNotMobile, isNotIE } from '../utils/Utils';
-import AudioScript from '../utils/AudioScript';
+import Audia from '../utils/Audia';
 import { loader } from '../utils/Loader';
 
 class myAudio {
   constructor(url, loop){
-
+		
     let _this;
 
     if ( typeof loop === 'undefined' ){
@@ -22,8 +22,8 @@ class myAudio {
 		if ( isNotIE() ) {
 
 			if( audioContextSupported() ) {
-
-				this.audio = new AudioScript;
+				
+				this.audio = new Audia;
 
 				if ( isNotMobile() ) {
 					let frequencyBinCount;
@@ -31,14 +31,13 @@ class myAudio {
 					this.analyser.fftSize = 2048;
 					this.audio.gainNode.connect(this.analyser);
 				}
-				loader.listener(function(endLoad) {
 
+				loader.listener(function(endLoad) {
 					_this.audio.addEventListener("load", function() {
 						endLoad();
 					})
 				})
 			} else {
-
 				this.audio = new Audio;
 				loader.listener(function(endLoad) {
 					_this.audio.addEventListener("canplay", function() {
@@ -46,9 +45,9 @@ class myAudio {
 					})
 				});
 			}
-
+			
 			this.audio.src = url;
-
+			
 			this.audio.loop = loop;
 		}
 
@@ -59,18 +58,15 @@ class myAudio {
   }
 
   play(time){
+		
 
-  	if ( this.isPlaying || !audioContextSupported() && time > 0  ) {
-  		this.isPlaying = !0;
-  		this.startedPlaying = (new Date).getTime();
-  		this.audio.play(time);
-  	}
+    this.isPlaying || !audioContextSupported() && time > 0 || (this.isPlaying = !0, this.startedPlaying = (new Date).getTime(), this.audio.play(time))
 
 
   }
 
   stop(stopAtTime){
-
+		
     if(this.isPlaying){
       this.isPlaying = false;
       this.audio.pause(stopAtTime);

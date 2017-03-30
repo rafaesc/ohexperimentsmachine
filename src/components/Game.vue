@@ -9,7 +9,7 @@
             <div id="Panel__contain" class="System__wrapper">
                 <div class="System_contain">
                     <div class="System__header">
-                        <img src="dist/assets/img/logo.png" width="205" height="90">
+                        <img src="dist/static/img/logo.png" width="205" height="90">
                     </div>
                     <div class="System__list">
                         <div v-for="(button, index) in listButtons"
@@ -93,6 +93,7 @@
             }
             initTime = audioTime() + initTime
         }
+        
         return initTime;
     }
 
@@ -146,7 +147,7 @@
 
     updateSaveStore = function(){
         let containActive = Object.keys(vm.listActive).join(',');
-
+        
         UrlHelper.set(containActive);
     };
 
@@ -172,7 +173,7 @@
             rafTimeout(function () {
                 vm.isPlaying = false;
                 clearListPause();
-
+                
                 validatePlay();
             }, time);
         }
@@ -206,7 +207,7 @@
             bPause = listPause[buttonPId];
 
             if (bPause.loops === loops ){
-
+                
                 buttonPause = vm.listButtons[bPause.idxButton];
                 if(bPause.type === 'sounds') {
                     vm.listSongs[bPause.idxSong].active = false;
@@ -547,7 +548,7 @@
                             if (typeof buttonWaiting !== 'undefined') {
 
                                 vm.$set(vm.listActive, buttonId, buttonObject);
-
+                                
 
                                 delete listWaiting[buttonId];
                             }

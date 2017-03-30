@@ -1,4 +1,5 @@
 class Loader {
+	
 
   constructor(){
     let _this;
@@ -14,11 +15,13 @@ class Loader {
   }
 
   onfinish(){
+		
   }
 
   onLoaded( loaded, toLoad ) {
 
   }
+
 
   listener(beforeLoad){
     let _this;
@@ -32,6 +35,7 @@ class Loader {
     })
   }
 
+
   checkLoaded(){
     this.loaded !== this.toLoad || this.done || (this.onfinish(),
       this.done = !0);
@@ -39,4 +43,5 @@ class Loader {
 }
 
 export let loader = new Loader();
+
 

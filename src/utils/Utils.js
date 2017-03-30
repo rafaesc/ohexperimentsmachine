@@ -1,7 +1,7 @@
 const WIN = window;
 
 function canPlayAudio(extension) {
-
+	
 	let audio = document.createElement("audio");
 	return !(!audio.canPlayType || !audio.canPlayType("audio/" + extension + ";").replace(/no/, ""));
 }
@@ -25,11 +25,12 @@ export let getAudioExtension = function(){
 			}
 		}
 	}
+	
 	return extension;
 };
 
 export let audioContextSupported = function(){
-
+	
 	let support;
 
 	support = undefined !== WIN.AudioContext || undefined !== WIN.webkitAudioContext;
@@ -37,6 +38,7 @@ export let audioContextSupported = function(){
 };
 
 export let audioTime = function(){
+	
 	return audioContextSupported() && void 0 !== audioContext ? audioContext.currentTime : Date.now() / 1e3
 };
 

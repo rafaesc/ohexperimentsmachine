@@ -132,7 +132,7 @@
                     TweenLite.to(sailL, 1, {ease: Power1.easeOut, top:0, delay: 0.1});
                     TweenLite.to(lineWrap, 0.5, {ease: Power1.easeOut, top:0, delay: 1});
                     TweenLite.to(share, 0.5, {opacity:1, delay: 1});
-                    
+                    //TweenLite.to(menuContent, 1, {opacity:1, delay: 1.2});
                     timeEndTransition = 1600;
                 } else {
                     ga('send', 'event', 'Menu', 'close');
@@ -141,7 +141,7 @@
                     TweenLite.to(sailL, 0, {top:'-100%', delay: 1});
                     TweenLite.to(sailR, 0, {top:'-100%', delay: 1});
                     TweenLite.to(share, 0, {opacity:0, delay: 1});
-
+                    //TweenLite.to(menuContent, 0, {opacity:0, delay: 1});
                     timeEndTransition = 1100;
                 }
                 setTimeout(function(){
@@ -155,7 +155,6 @@
         methods: {
             redirect(type){
                 ga('send', 'event', 'Link', 'redirect', type);
-                console.debug(type);
             },
             openMenu(){
                 if ( !inTransition ) {

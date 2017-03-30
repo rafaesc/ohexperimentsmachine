@@ -28,8 +28,7 @@ export const mutations = {
 		state.doneLoad = true;
 	},
 	reviewBrowser( state ) {
-		let stateChange = 'machine';
-		state[stateChange] = true;
+		state.machine = true;
 	},
 	activeLooper( state ) {
 		state.looper = true;

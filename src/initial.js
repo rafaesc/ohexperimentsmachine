@@ -5,9 +5,10 @@ require('./vendor/parallax');
 require('./vendor/CSSPlugin.min.js');
 require('./vendor/TweenLite.min.js');
 require('./vendor/EasePack.min.js');
+require('../scss/build.scss');
 
 window.requestAnimFrame = function() {
-  // Polifyll requestAnimFrame
+	
   return window.requestAnimationFrame ||
     window.webkitRequestAnimationFrame ||
     window.mozRequestAnimationFrame ||
@@ -24,6 +25,7 @@ window.currentTime = function() {
   return Date.now()
 };
 
+window.lastRendered = 123456789;
 const createAudioContext = require('ios-safe-audio-context');
 window.audioContext = createAudioContext();
 

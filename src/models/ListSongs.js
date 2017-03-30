@@ -2,7 +2,7 @@ import myAudio from './MyAudio';
 import { getAudioExtension } from '../utils/Utils';
 
 const EXTENSION = getAudioExtension();
-const AUDIO_LOCATION = 'dist/assets/audio';
+const AUDIO_LOCATION = 'static/audio';
 
 export let listSongs = [
 	{

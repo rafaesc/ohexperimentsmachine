@@ -47,12 +47,12 @@
     import PathLoader from '../models/PathLoader';
 
     const LIST_IMAGES = [
-        'dist/assets/img/panel.png',
-        'dist/assets/img/front2.png',
-        'dist/assets/img/montain2.png',
-        'dist/assets/img/oliver.png',
-        'dist/assets/img/sky1.jpg',
-        'dist/assets/img/transition.png'
+        'dist/static/img/panel.png',
+        'dist/static/img/front2.png',
+        'dist/static/img/montain2.png',
+        'dist/static/img/oliver.png',
+        'dist/static/img/sky1.jpg',
+        'dist/static/img/transition.png'
     ];
 
     let vm, parent, loadImages, simulationFn, progress;
@@ -88,9 +88,10 @@
 
     simulationFn =  function( instance ){
         let interval = setInterval( function() {
-
+            
 
             instance.setProgress( progress );
+
 
             if( progress === 1 ) {
                 clearInterval( interval );
@@ -130,7 +131,7 @@
                 frames = 24,
                 resize = false;
             let transitionBackground = vm.$refs.transition;
-
+            
             setLayerDimensions();
             window.addEventListener('resize', function () {
                 if( !resize ) {
@@ -140,7 +141,7 @@
             });
             vm.$store.commit('reviewBrowser');
             function setLayerDimensions() {
-                let windowWidth = window.innerWidth+100,
+                var windowWidth = window.innerWidth+100,
                 windowHeight = window.innerHeight,
                 layerHeight, layerWidth;
 

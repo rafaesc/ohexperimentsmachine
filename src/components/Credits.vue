@@ -10,7 +10,7 @@
       <div class="Credits__footer--container">
         <div class="row">
           <div class="Credits__content">
-            <img src="dist/assets/img/logo_white.png" width="120">
+            <img src="dist/static/img/logo_white.png" width="120">
             <br><br>
             <p>Oliver Heldens Experiments Machine is a non-commercial and unofficial game created by me, Rafael Escala.</p>
             <div class="Credits__row">
@@ -61,7 +61,6 @@
     methods: {
       redirect(type){
         ga('send', 'event', 'Link', 'redirect', type);
-        console.debug(type);
       },
       activeCredits(){
         ga('send', 'event', 'Credits', 'click');

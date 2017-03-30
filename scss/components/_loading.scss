@@ -12,7 +12,7 @@ $size_headphones: 80px;
       right: 0;
       z-index: 7;
       overflow: hidden;
-      background: #261e47 url('./assets/img/bg.jpg') center;
+      background: #261e47 url('../static/img/bg.jpg') center;
       background-size: cover;
       opacity: 1;
       visibility: visible;
@@ -83,7 +83,7 @@ $size_headphones: 80px;
       transform: translateY(-50%) translateX(-98%);
       height: 100%;
       width: 2500%;
-      background: url(./assets/img/transition.png) no-repeat 0 0;
+      background: url('../static/img/transition.png') no-repeat 0 0;
       background-size: 100% 100%;
     }
   }

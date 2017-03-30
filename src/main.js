@@ -1,6 +1,6 @@
 import 'es6-promise/auto';
 import initial from './initial';
-import { isIE, isNotIE } from './utils/Utils';
+import { isIE } from './utils/Utils';
 import Vue from 'vue';
 import store from './store';
 import App from './App.vue';
